@@ -18,7 +18,7 @@ export class TrustedAuthorityConnexionsComponent implements OnInit {
 
   ngOnInit(): void {
     this._trustedAuthorityService.getConnections().subscribe((connections) => {
-      this.connections = connections;
+      this.connections = connections.results;
     });
   }
 }

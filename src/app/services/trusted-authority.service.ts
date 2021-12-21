@@ -1,6 +1,6 @@
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
-import ConnectionInterface from "../interfaces/ConnectionInterface";
+import ConnectionResultInterface from "../interfaces/ConnectionResultInterface";
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,7 @@ export class TrustedAuthorityService {
   ) {}
 
   getConnections() {
-    return this.http.get<ConnectionInterface[]>(this.ROOT_URL + '/connections');
+    return this.http.get<ConnectionResultInterface>(this.ROOT_URL + '/connections');
   }
 
 }

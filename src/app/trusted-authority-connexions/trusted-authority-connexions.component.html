@@ -10,26 +10,26 @@
         <div class="col">
           <mat-form-field class="mat-form-field">
             <mat-label>Date de création</mat-label>
-            <input disabled matInput value="21.12.2021"/>
+            <input disabled matInput [value]="connection.created_at"/>
           </mat-form-field>
         </div>
         <div class="col">
           <mat-form-field class="mat-form-field">
             <mat-label>Statut</mat-label>
-            <input disabled matInput value="Actif"/>
+            <input disabled matInput [value]="connection.state"/>
           </mat-form-field>
         </div>
       </div>
       <div class="row">
         <mat-form-field class="mat-form-field">
           <mat-label>Connection ID</mat-label>
-          <input disabled matInput value="1ed0ce65-9ed6-43ed-8836-fa2cdbcbdf27"/>
+          <input disabled matInput [value]="connection.connection_id"/>
         </mat-form-field>
       </div>
       <div class="row">
         <mat-form-field class="mat-form-field">
           <mat-label>Credential Definition ID</mat-label>
-          <input disabled matInput value="VA3GvaAZRZwrH4dDtVWd6E:3:CL:8:default"/>
+          <input disabled matInput value="???"/>
         </mat-form-field>
       </div>
       <mat-accordion>

@@ -1,6 +1,6 @@
 export default interface ConnectionInterface {
-  dateCreation: Date;
-  statut: string;
-  nom: string;
-  prenom: string;
+  connection_id: string;
+  created_at: Date;
+  state: string;
+  their_label: string;
 }
