@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrustedAuthorityComponent } from './trusted-authority.component';
+import { TrustedAuthorityConnexionsComponent } from './trusted-authority-connexions.component';
 
 describe('TrustedAuthorityComponent', () => {
-  let component: TrustedAuthorityComponent;
-  let fixture: ComponentFixture<TrustedAuthorityComponent>;
+  let component: TrustedAuthorityConnexionsComponent;
+  let fixture: ComponentFixture<TrustedAuthorityConnexionsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TrustedAuthorityComponent ]
+      declarations: [ TrustedAuthorityConnexionsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TrustedAuthorityComponent);
+    fixture = TestBed.createComponent(TrustedAuthorityConnexionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

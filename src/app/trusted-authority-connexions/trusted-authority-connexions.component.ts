@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import ConnectionInterface from "../interfaces/ConnectionInterface";
 
 @Component({
-  selector: 'app-trusted-authority',
-  templateUrl: './trusted-authority.component.html',
-  styleUrls: ['./trusted-authority.component.scss']
+  selector: 'app-trusted-authority-connexions',
+  templateUrl: './trusted-authority-connexions.component.html',
+  styleUrls: ['./trusted-authority-connexions.component.scss']
 })
-export class TrustedAuthorityComponent implements OnInit {
+export class TrustedAuthorityConnexionsComponent implements OnInit {
 
   panelOpenState = true;
   connections: ConnectionInterface[] = [];

@@ -6,11 +6,11 @@
   <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
     <mat-nav-list>
       <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-        <span class="full-width" *ngIf="isExpanded || isShowing">Invitations</span>
+        <a routerLink="invitations"><span class="full-width" *ngIf="isExpanded || isShowing">Invitations</span></a>
         <mat-icon mat-list-icon>local_post_office</mat-icon>
       </mat-list-item>
       <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-        <span class="full-width" *ngIf="isExpanded || isShowing">Connexions</span>
+        <a routerLink="connexions"><span class="full-width" *ngIf="isExpanded || isShowing">Connexions</span></a>
         <mat-icon mat-list-icon>link</mat-icon>
       </mat-list-item>
     </mat-nav-list>

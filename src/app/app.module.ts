@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TrustedAuthorityComponent } from './trusted-authority/trusted-authority.component';
+import { TrustedAuthorityConnexionsComponent } from './trusted-authority-connexions/trusted-authority-connexions.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,13 +17,15 @@ import { MatCardModule } from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatExpansionModule} from "@angular/material/expansion";
+import { TrustedAuthorityInvitationsComponentComponent } from './trusted-authority-invitations-component/trusted-authority-invitations-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TrustedAuthorityComponent,
+    TrustedAuthorityConnexionsComponent,
     HomeComponent,
-    SideNavComponent
+    SideNavComponent,
+    TrustedAuthorityInvitationsComponentComponent,
   ],
   imports: [
     BrowserModule,
