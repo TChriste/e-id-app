@@ -8,11 +8,8 @@ html, body {
   height: 100vh;
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
-.example-sidenav-content {
-  display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
+.sidenav-content {
+  padding: 2%;
 }
 .example-sidenav {
   user-select: none;

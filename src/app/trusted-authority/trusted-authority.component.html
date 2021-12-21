@@ -1,1 +1,81 @@
-<p>trusted-authority works!</p>
+<h1>Connexions</h1>
+<div class="info">
+  <mat-icon aria-hidden="false">info</mat-icon>
+   Liste des connexions établies, veuillez vérifier les informations et valider la création de l'e-id
+</div>
+<mat-card class="connection-card" *ngFor="let connection of connections; let i = index">
+  <mat-card-content>
+    <form class="example-form">
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="mat-form-field">
+            <mat-label>Date de création</mat-label>
+            <input disabled matInput value="21.12.2021"/>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="mat-form-field">
+            <mat-label>Statut</mat-label>
+            <input disabled matInput value="Actif"/>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <mat-form-field class="mat-form-field">
+          <mat-label>Connection ID</mat-label>
+          <input disabled matInput value="1ed0ce65-9ed6-43ed-8836-fa2cdbcbdf27"/>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field class="mat-form-field">
+          <mat-label>Credential Definition ID</mat-label>
+          <input disabled matInput value="VA3GvaAZRZwrH4dDtVWd6E:3:CL:8:default"/>
+        </mat-form-field>
+      </div>
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="panelOpenState">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Informations personnelles
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="mat-form-field">
+                <mat-label>Nom</mat-label>
+                <input disabled matInput value="Smith"/>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="mat-form-field">
+                <mat-label>Prénom</mat-label>
+                <input disabled matInput value="Alice"/>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field class="mat-form-field">
+                <mat-label>Genre</mat-label>
+                <input disabled matInput value="Féminin"/>
+              </mat-form-field>
+            </div>
+            <div class="col">
+              <mat-form-field class="mat-form-field">
+                <mat-label>Date de naissance</mat-label>
+                <input disabled matInput value="05.03.1996"/>
+              </mat-form-field>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </form>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-stroked-button color="warn">Supprimer</button>
+    <button mat-raised-button color="primary">Créer un identifiant</button>
+  </mat-card-actions>
+</mat-card>
+
+
+

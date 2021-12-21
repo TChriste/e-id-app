@@ -7,17 +7,17 @@
     <mat-nav-list>
       <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
         <span class="full-width" *ngIf="isExpanded || isShowing">Invitations</span>
-        <mat-icon mat-list-icon>home</mat-icon>
+        <mat-icon mat-list-icon>local_post_office</mat-icon>
       </mat-list-item>
       <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
         <span class="full-width" *ngIf="isExpanded || isShowing">Connexions</span>
-        <mat-icon mat-list-icon>home</mat-icon>
+        <mat-icon mat-list-icon>link</mat-icon>
       </mat-list-item>
     </mat-nav-list>
     <mat-nav-list>
     </mat-nav-list>
   </mat-sidenav>
-  <div class="example-sidenav-content">
+  <div class="sidenav-content">
     <router-outlet></router-outlet>
   </div>
 </mat-sidenav-container>

@@ -1,0 +1,33 @@
+.connection-card {
+ margin-top: 1%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+
+  .col {
+    flex: 1;
+  }
+
+  .col:first-child {
+    margin-right: 5%;
+  }
+}
+
+.mat-form-field {
+  width: 100%
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  background-color: #2196F3;
+  color: white;
+  padding: 1%;
+  margin-bottom: 1%;
+
+  mat-icon {
+    margin-right: 1%;
+  }
+}
