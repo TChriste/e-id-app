@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import ConnectionInterface from "../interfaces/ConnectionInterface";
+import {TrustedAuthorityService} from "../services/trusted-authority.service";
 
 @Component({
   selector: 'app-trusted-authority-connexions',
@@ -11,21 +12,13 @@ export class TrustedAuthorityConnexionsComponent implements OnInit {
   panelOpenState = true;
   connections: ConnectionInterface[] = [];
 
-  constructor() { }
+  constructor(
+    private _trustedAuthorityService: TrustedAuthorityService
+  ) { }
 
   ngOnInit(): void {
-    this.connections.push({
-      dateCreation: new Date(),
-      nom: "Smith",
-      prenom: "Alice",
-      statut: "Actif"
-    });
-    this.connections.push({
-      dateCreation: new Date(),
-      nom: "Smith2",
-      prenom: "Alice2",
-      statut: "Actif2"
+    this._trustedAuthorityService.getConnections().subscribe((connections) => {
+      this.connections = connections;
     });
   }
-
 }
