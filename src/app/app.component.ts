@@ -8,20 +8,11 @@ import {Router, RoutesRecognized} from "@angular/router";
 })
 export class AppComponent implements OnInit {
   title = 'e-id-app';
-  isTrustedAuthorityPage = false;
 
-  public constructor(private router: Router) {
+  public constructor() {
   }
 
   ngOnInit() {
-    this.router.events.subscribe(event => {
-      if (event instanceof RoutesRecognized) {
-        const route = event.state.root.firstChild;
-        if (route && route.data['trustedAuthority']) {
-          this.isTrustedAuthorityPage = route.data['trustedAuthority'];
-        }
-      }
-    });
   }
 
 }

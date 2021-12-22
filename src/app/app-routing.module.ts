@@ -12,19 +12,24 @@ const routes: Routes = [
   {
     path: 'confederation',
     component: SideNavComponent,
-    data: {
-      trustedAuthority: true
-    },
     children: [
-      { path: 'connexions', component: TrustedAuthorityConnexionsComponent },
-      { path: 'invitations', component: TrustedAuthorityInvitationsComponentComponent },
+      { path: 'connexions', component: TrustedAuthorityConnexionsComponent, 
+        data: {
+          trustedAuthority: true
+        }
+      },
+      { path: 'invitations', component: TrustedAuthorityInvitationsComponentComponent,
+        data: {
+          trustedAuthority: true
+        }
+      },
     ]
   },
   {
     path: 'user',
     component: SideNavComponent,
     data: {
-      trustedAuthority: true
+      trustedAuthority: false
     },
     children: [
       { path: 'wallet', component: WalletComponent },

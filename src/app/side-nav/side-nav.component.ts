@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-side-nav',
@@ -10,8 +11,14 @@ export class SideNavComponent implements OnInit {
   isExpanded = true;
   showSubmenu: boolean = false;
   isShowing = false;
+  isTrustedAuthorityPage = false;
 
-  constructor() { }
+  constructor(route: ActivatedRoute) {
+    route.url.subscribe(() => {
+      console.log(route?.snapshot?.firstChild?.data['trustedAuthority']);
+      this.isTrustedAuthorityPage = route?.snapshot?.firstChild?.data['trustedAuthority'];
+     });
+  }
 
   ngOnInit(): void {
   }

@@ -1,19 +1,19 @@
 <mat-toolbar color="primary" class="example-toolbar">
   <button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
-  <h1 class="example-app-name">E-ID</h1>
+  <h1 class="example-app-name" [routerLink]='[""]'>E-ID</h1>
 </mat-toolbar>
 <mat-sidenav-container class="example-container" autosize>
   <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
     <mat-nav-list>
-      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/confederation/invitations"]'>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/confederation/invitations"]' *ngIf="isTrustedAuthorityPage">
           <span class="full-width" *ngIf="isExpanded || isShowing">Invitations</span>
           <mat-icon mat-list-icon>local_post_office</mat-icon>
       </mat-list-item>
-      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/confederation/connexions"]'>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/confederation/connexions"]' *ngIf="isTrustedAuthorityPage">
         <span class="full-width" *ngIf="isExpanded || isShowing">Connexions</span>
         <mat-icon mat-list-icon>link</mat-icon>
       </mat-list-item>
-      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/user/wallet"]'>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/user/wallet"]' *ngIf="!isTrustedAuthorityPage">
         <span class="full-width" *ngIf="isExpanded || isShowing">Wallet</span>
         <mat-icon mat-list-icon>contact_mail</mat-icon>
       </mat-list-item>
