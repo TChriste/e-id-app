@@ -5,13 +5,17 @@
 <mat-sidenav-container class="example-container" autosize>
   <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
     <mat-nav-list>
-      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-        <a routerLink="invitations"><span class="full-width" *ngIf="isExpanded || isShowing">Invitations</span></a>
-        <mat-icon mat-list-icon>local_post_office</mat-icon>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/confederation/invitations"]'>
+          <span class="full-width" *ngIf="isExpanded || isShowing">Invitations</span>
+          <mat-icon mat-list-icon>local_post_office</mat-icon>
       </mat-list-item>
-      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
-        <a routerLink="connexions"><span class="full-width" *ngIf="isExpanded || isShowing">Connexions</span></a>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/confederation/connexions"]'>
+        <span class="full-width" *ngIf="isExpanded || isShowing">Connexions</span>
         <mat-icon mat-list-icon>link</mat-icon>
+      </mat-list-item>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/user/wallet"]'>
+        <span class="full-width" *ngIf="isExpanded || isShowing">Wallet</span>
+        <mat-icon mat-list-icon>contact_mail</mat-icon>
       </mat-list-item>
     </mat-nav-list>
     <mat-nav-list>

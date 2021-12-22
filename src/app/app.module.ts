@@ -19,6 +19,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatExpansionModule} from "@angular/material/expansion";
 import { TrustedAuthorityInvitationsComponentComponent } from './trusted-authority-invitations-component/trusted-authority-invitations-component.component';
 import {HttpClientModule} from "@angular/common/http";
+import { WalletComponent } from './user/wallet/wallet.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {HttpClientModule} from "@angular/common/http";
     HomeComponent,
     SideNavComponent,
     TrustedAuthorityInvitationsComponentComponent,
+    WalletComponent,
   ],
   imports: [
     BrowserModule,
