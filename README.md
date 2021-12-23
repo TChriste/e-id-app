@@ -1,12 +1,13 @@
 # EIdApp
 ## Initialisation
+
 ### Mise en place de la VM et des outils nécessaires
 ```bash
 sudo apt-get install docker docker-compose
 sudo usermod -a -G docker $USER
 sudo apt-get install pip
 ```
-Une fois les commandes ci-dessus exécutées, il est nécessaire de redémarrer la VM. 
+ 
 
 ```bash
 sudo apt install curl
@@ -19,6 +20,8 @@ pip3 install aries-cloudagent
 pip install python3-indy
 pip install pytest-xdist
 ```
+Une fois les commandes ci-dessus exécutées, il est nécessaire de redémarrer la VM.
+
 ### Mise en place de von-network
 1. Clone du projet
 ```bash
