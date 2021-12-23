@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TrustedAuthorityConnexionsComponent } from './trusted-authority-connexions/trusted-authority-connexions.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,6 +20,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import { TrustedAuthorityInvitationsComponentComponent } from './trusted-authority-invitations-component/trusted-authority-invitations-component.component';
 import {HttpClientModule} from "@angular/common/http";
 import { WalletComponent } from './user/wallet/wallet.component';
+import { PropositionComponent } from './user/demande/proposition.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { WalletComponent } from './user/wallet/wallet.component';
     SideNavComponent,
     TrustedAuthorityInvitationsComponentComponent,
     WalletComponent,
+    PropositionComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,8 @@ import { WalletComponent } from './user/wallet/wallet.component';
     MatFormFieldModule,
     MatInputModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

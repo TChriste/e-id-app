@@ -6,6 +6,7 @@ import {HomeComponent} from "./home/home.component";
 import {TrustedAuthorityInvitationsComponentComponent} from "./trusted-authority-invitations-component/trusted-authority-invitations-component.component";
 import {SideNavComponent} from "./side-nav/side-nav.component";
 import { WalletComponent } from './user/wallet/wallet.component';
+import { PropositionComponent } from './user/demande/proposition.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: {trustedAuthority: false} },
@@ -32,6 +33,7 @@ const routes: Routes = [
       trustedAuthority: false
     },
     children: [
+      { path: 'demande', component: PropositionComponent },
       { path: 'wallet', component: WalletComponent },
     ]
   },

@@ -1,0 +1,32 @@
+<div [formGroup]="form">
+    <div class="row">
+        <div class="col right">
+            <h2>Demande de création d'un e-id</h2>
+            <p>Explication ...</p>
+        </div>
+    </div>
+    <div class="row">
+        <mat-form-field class="mat-form-field">
+            <mat-label>Nom</mat-label>
+            <input matInput formControlName="nom"/>
+        </mat-form-field>
+    </div>
+    <div class="row">
+    <mat-form-field class="mat-form-field">
+        <mat-label>Prénom</mat-label>
+        <input matInput formControlName="prenom"/>
+    </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field class="mat-form-field">
+            <mat-label>Age</mat-label>
+            <input matInput formControlName="age"/>
+        </mat-form-field>
+    </div>
+    <div class="row">    
+        <button mat-button mat-raised-button color="primary" (click)="valider()" [disabled]="form.invalid">
+            Valider
+        </button>
+    </div>
+</div>
+  
