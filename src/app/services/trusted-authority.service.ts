@@ -17,4 +17,8 @@ export class TrustedAuthorityService {
     return this.http.get<ConnectionResultInterface>(this.ROOT_URL + '/connections');
   }
 
+  getRecords() {
+    return this.http.get<any>(this.ROOT_URL + '/...');
+  }
+
 }

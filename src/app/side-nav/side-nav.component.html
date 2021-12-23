@@ -5,18 +5,26 @@
 <mat-sidenav-container class="example-container" autosize>
   <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
     <mat-nav-list>
-      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/confederation/invitations"]' *ngIf="isTrustedAuthorityPage">
-          <span class="full-width" *ngIf="isExpanded || isShowing">Invitations</span>
-          <mat-icon mat-list-icon>local_post_office</mat-icon>
-      </mat-list-item>
       <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/confederation/connexions"]' *ngIf="isTrustedAuthorityPage">
         <span class="full-width" *ngIf="isExpanded || isShowing">Connexions</span>
         <mat-icon mat-list-icon>link</mat-icon>
+      </mat-list-item>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/confederation/propositions"]' *ngIf="isTrustedAuthorityPage">
+        <span class="full-width" *ngIf="isExpanded || isShowing">Propositions</span>
+        <mat-icon mat-list-icon>local_post_office</mat-icon>
+      </mat-list-item>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/confederation/confirmations"]' *ngIf="isTrustedAuthorityPage">
+        <span class="full-width" *ngIf="isExpanded || isShowing">Confirmations</span>
+        <mat-icon mat-list-icon>local_post_office</mat-icon>
       </mat-list-item>
 
       <!-- User links-->
       <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/user/demande"]' *ngIf="!isTrustedAuthorityPage">
         <span class="full-width" *ngIf="isExpanded || isShowing">Demande</span>
+        <mat-icon mat-list-icon>contact_mail</mat-icon>
+      </mat-list-item>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/user/confirmation"]' *ngIf="!isTrustedAuthorityPage">
+        <span class="full-width" *ngIf="isExpanded || isShowing">Confirmation</span>
         <mat-icon mat-list-icon>contact_mail</mat-icon>
       </mat-list-item>
       <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/user/wallet"]' *ngIf="!isTrustedAuthorityPage">

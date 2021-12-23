@@ -20,7 +20,10 @@ import {MatExpansionModule} from "@angular/material/expansion";
 import { TrustedAuthorityInvitationsComponentComponent } from './trusted-authority-invitations-component/trusted-authority-invitations-component.component';
 import {HttpClientModule} from "@angular/common/http";
 import { WalletComponent } from './user/wallet/wallet.component';
-import { PropositionComponent } from './user/demande/proposition.component';
+import { PropositionComponent } from './user/proposition/proposition.component';
+import { PropositionsComponent } from './confederation/propositions/propositions.component';
+import { ConfirmationUtilisateurComponent } from './user/confirmation-utilisateur/confirmation-utilisateur.component';
+import { ConfirmationsComponent } from './confederation/confirmations/confirmations.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { PropositionComponent } from './user/demande/proposition.component';
     TrustedAuthorityInvitationsComponentComponent,
     WalletComponent,
     PropositionComponent,
+    PropositionsComponent,
+    ConfirmationUtilisateurComponent,
+    ConfirmationsComponent,
   ],
   imports: [
     BrowserModule,

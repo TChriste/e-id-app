@@ -1,0 +1,28 @@
+<h1>Liste des propositions</h1>
+<mat-card class="card" *ngFor="let proposition of propositions; let i = index">
+    <mat-card-content>
+        <div class="row">
+            <mat-form-field class="mat-form-field">
+            <mat-label>Nom</mat-label>
+            <input disabled matInput/>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="mat-form-field">
+            <mat-label>Prénom</mat-label>
+            <input disabled matInput/>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="mat-form-field">
+            <mat-label>Age</mat-label>
+            <input disabled matInput/>
+            </mat-form-field>
+        </div>
+    </mat-card-content>
+    <mat-card-actions align="end">
+        <button mat-stroked-button color="warn">Supprimer</button>
+        <button mat-raised-button color="primary">Créer une offre</button>
+      </mat-card-actions>
+  </mat-card>
+  

@@ -6,7 +6,10 @@ import {HomeComponent} from "./home/home.component";
 import {TrustedAuthorityInvitationsComponentComponent} from "./trusted-authority-invitations-component/trusted-authority-invitations-component.component";
 import {SideNavComponent} from "./side-nav/side-nav.component";
 import { WalletComponent } from './user/wallet/wallet.component';
-import { PropositionComponent } from './user/demande/proposition.component';
+import { PropositionComponent } from './user/proposition/proposition.component';
+import { PropositionsComponent } from './confederation/propositions/propositions.component';
+import { ConfirmationUtilisateurComponent } from './user/confirmation-utilisateur/confirmation-utilisateur.component';
+import { ConfirmationsComponent } from './confederation/confirmations/confirmations.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: {trustedAuthority: false} },
@@ -14,12 +17,20 @@ const routes: Routes = [
     path: 'confederation',
     component: SideNavComponent,
     children: [
-      { path: 'connexions', component: TrustedAuthorityConnexionsComponent, 
+      { 
+        path: 'connexions', component: TrustedAuthorityConnexionsComponent, 
         data: {
           trustedAuthority: true
         }
       },
-      { path: 'invitations', component: TrustedAuthorityInvitationsComponentComponent,
+      { 
+        path: 'propositions', component: PropositionsComponent, 
+        data: {
+          trustedAuthority: true
+        }
+      },
+      { 
+        path: 'confirmations', component: ConfirmationsComponent,
         data: {
           trustedAuthority: true
         }
@@ -34,6 +45,7 @@ const routes: Routes = [
     },
     children: [
       { path: 'demande', component: PropositionComponent },
+      { path: 'confirmation', component: ConfirmationUtilisateurComponent },
       { path: 'wallet', component: WalletComponent },
     ]
   },
