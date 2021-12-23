@@ -5,6 +5,10 @@
 sudo apt-get install docker docker-compose
 sudo usermod -a -G docker $USER
 sudo apt-get install pip
+```
+Une fois les commandes ci-dessus exécutées, il est nécessaire de redémarrer la VM. 
+
+```bash
 sudo apt install curl
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 68DB5E88
 sudo add-apt-repository "deb https://repo.sovrin.org/sdk/deb bionic master"
