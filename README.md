@@ -24,6 +24,7 @@ cd von-network/
 sudo ./manage build
 sudo ./manage start --logs
 ```
+4. Von-network est visible à l'adresse : http://0.0.0.0:9000
 
 
 
