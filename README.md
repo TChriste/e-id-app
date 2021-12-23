@@ -1,4 +1,22 @@
 # EIdApp
+## Initialisation
+### Mise en place de la VM et des outils nécessaires
+```bash
+sudo apt-get install docker docker-compose
+sudo usermod -a -G docker $USER
+sudo apt-get install pip
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 68DB5E88
+sudo add-apt-repository "deb https://repo.sovrin.org/sdk/deb bionic master"
+sudo apt-get update
+sudo apt-get install -y libindy
+pip3 install aries-cloudagent
+pip install python3-indy
+pip install pytest-xdist
+```
+
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
