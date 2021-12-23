@@ -26,8 +26,15 @@ sudo ./manage start --logs
 ```
 4. Von-network est visible à l'adresse : http://0.0.0.0:9000
 
+### Enregistrement de la confédération
+```bash
+curl -X POST "http://localhost:9000/register" -d '{"seed": "Conf0000000000000000000000000001", "role": "TRUST_ANCHOR", "alias": "Confederation"}'
+```
 
-
+### Lancer l'agent de la confédération
+```bash
+aca-py start --label Conf -it http 0.0.0.0 8000 -ot http --admin 0.0.0.0 11000 --admin-insecure-mode --genesis-url http://localhost:9000/genesis --seed Conf0000000000000000000000000001 --endpoint http://localhost:8000/ --debug-connections --auto-provision --wallet-type indy --wallet-name Conf1 --wallet-key secret
+```
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
