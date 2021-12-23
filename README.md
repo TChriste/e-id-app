@@ -13,6 +13,17 @@ pip3 install aries-cloudagent
 pip install python3-indy
 pip install pytest-xdist
 ```
+### Mise en place de von-network
+1. Clone du projet
+```bash
+git clone https://github.com/bcgov/von-network.git
+```
+3. Build et démarrage
+```bash
+cd von-network/
+sudo ./manage build
+sudo ./manage start --logs
+```
 
 
 
