@@ -41,6 +41,10 @@ curl -X POST "http://localhost:9000/register" -d '{"seed": "Conf0000000000000000
 aca-py start --label Conf -it http 0.0.0.0 8000 -ot http --admin 0.0.0.0 11000 --admin-insecure-mode --genesis-url http://localhost:9000/genesis --seed Conf0000000000000000000000000001 --endpoint http://localhost:8000/ --debug-connections --auto-provision --wallet-type indy --wallet-name Conf1 --wallet-key secret
 ```
 
+### Lancer l'agent bob
+```bash
+aca-py start --label Bob -it http 0.0.0.0 8001 -ot http --admin 0.0.0.0 11001 --admin-insecure-mode --endpoint http://localhost:8001/ --genesis-url http://localhost:9000/genesis --debug-connections --auto-provision --wallet-local-did --wallet-type indy --wallet-name Bob1 --wallet-key secret
+```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
