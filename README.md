@@ -48,6 +48,28 @@ aca-py start --label Bob -it http 0.0.0.0 8001 -ot http --admin 0.0.0.0 11001 --
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
+
+## WEB APP
+### Get started
+1. Installation de NPM
+```bash
+sudo apt-get install git-all
+sudo apt install npm
+```
+1. Clone du projet :
+```bash
+git clone https://github.com/TChriste/e-id-app.git
+cd e-id-app
+```
+
+4. Installation et démarrage
+```bash
+npm install
+ng serve --open
+```
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
