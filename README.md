@@ -48,6 +48,84 @@ aca-py start --label Bob -it http 0.0.0.0 8001 -ot http --admin 0.0.0.0 11001 --
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
+### Créer une connexion entre la confédération et Bob
+1. *Confédération envoie une invitation :* Dans l'agent Confédération, exécuter l'end-point : "/out-of-band/create-invitation (POST)"
+Body : 
+```json
+{
+  "handshake_protocols": [
+    "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/didexchange/1.0"
+  ],
+  "use_public_did": false
+}
+```
+Réponse : 
+```json
+{
+  "state": "initial",
+  "invi_msg_id": "a40bb544-46b8-4aa0-bfe3-048e306b690b",
+  "invitation": {
+    "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/out-of-band/1.0/invitation",
+    "@id": "a40bb544-46b8-4aa0-bfe3-048e306b690b",
+    "services": [
+      {
+        "id": "#inline",
+        "type": "did-communication",
+        "recipientKeys": [
+          "did:key:z6Mkg6TynY8RWhqQWAgr8u67R1tFp9JVyqQkdJTw5FB4BBzm"
+        ],
+        "serviceEndpoint": "http://localhost:8000/"
+      }
+    ],
+    "label": "Conf",
+    "handshake_protocols": [
+      "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/didexchange/1.0"
+    ]
+  },
+  "invitation_url": "http://localhost:8000/?oob=eyJAdHlwZSI6ICJkaWQ6c292OkJ6Q2JzTlloTXJqSGlxWkRUVUFTSGc7c3BlYy9vdXQtb2YtYmFuZC8xLjAvaW52aXRhdGlvbiIsICJAaWQiOiAiYTQwYmI1NDQtNDZiOC00YWEwLWJmZTMtMDQ4ZTMwNmI2OTBiIiwgInNlcnZpY2VzIjogW3siaWQiOiAiI2lubGluZSIsICJ0eXBlIjogImRpZC1jb21tdW5pY2F0aW9uIiwgInJlY2lwaWVudEtleXMiOiBbImRpZDprZXk6ejZNa2c2VHluWThSV2hxUVdBZ3I4dTY3UjF0RnA5SlZ5cVFrZEpUdzVGQjRCQnptIl0sICJzZXJ2aWNlRW5kcG9pbnQiOiAiaHR0cDovL2xvY2FsaG9zdDo4MDAwLyJ9XSwgImxhYmVsIjogIkNvbmYiLCAiaGFuZHNoYWtlX3Byb3RvY29scyI6IFsiZGlkOnNvdjpCekNic05ZaE1yakhpcVpEVFVBU0hnO3NwZWMvZGlkZXhjaGFuZ2UvMS4wIl19",
+  "trace": false
+}
+```
+2. *Bob revoit une invitation :* Avec l'agent bob, copier/coller la résponse de l'invitation dans le body de l'enpoint /out-of-band/receive-invitation (POST):  
+Body : 
+```json
+{
+    "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/out-of-band/1.0/invitation",
+    "@id": "a40bb544-46b8-4aa0-bfe3-048e306b690b",
+    "services": [
+      {
+        "id": "#inline",
+        "type": "did-communication",
+        "recipientKeys": [
+          "did:key:z6Mkg6TynY8RWhqQWAgr8u67R1tFp9JVyqQkdJTw5FB4BBzm"
+        ],
+        "serviceEndpoint": "http://localhost:8000/"
+      }
+    ],
+    "label": "Conf",
+    "handshake_protocols": [
+      "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/didexchange/1.0"
+    ]
+  }
+```
+Réponse : 
+```json
+{
+  "invitation_key": "2eCwCHszBALwPfr9TL8GZvLFza2eZxAPwHZ1EyD3FyDP",
+  "their_role": "inviter",
+  "their_label": "Conf",
+  "connection_protocol": "didexchange/1.0",
+  "created_at": "2021-12-24T14:35:58.120459Z",
+  "rfc23_state": "invitation-received",
+  "accept": "manual",
+  "connection_id": "ed6e2de7-9f57-44ca-a921-56b80c16bdad",
+  "routing_state": "none",
+  "invitation_mode": "once",
+  "state": "invitation",
+  "updated_at": "2021-12-24T14:35:58.120459Z",
+  "invitation_msg_id": "a40bb544-46b8-4aa0-bfe3-048e306b690b"
+}
+```
 
 ## WEB APP
 ### Get started
@@ -72,7 +150,8 @@ cd e-id-app
 npm install
 ng serve --open
 ```
-5. Application accessible à l'adresse : http://localhost:4200/
+5. Application accessible à l'adresse : http://localhost:4200/ :
+
 
 
 ## Development server
