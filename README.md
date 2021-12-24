@@ -3,14 +3,10 @@
 
 ### Mise en place de la VM et des outils nécessaires
 ```bash
+sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 sudo apt-get install docker docker-compose
 sudo usermod -a -G docker $USER
 sudo apt-get install pip
-```
- 
-
-```bash
-sudo apt install curl
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 68DB5E88
 sudo add-apt-repository "deb https://repo.sovrin.org/sdk/deb bionic master"
 sudo apt-get update
