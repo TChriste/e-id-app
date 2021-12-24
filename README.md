@@ -51,7 +51,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## WEB APP
 ### Get started
-1. Installation de NPM
+1. Installation de Git et NPM
 ```bash
 sudo apt-get install git-all
 sudo apt install npm
