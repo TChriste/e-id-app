@@ -1,6 +1,5 @@
 # EIdApp
-## Initialisation
-
+## Installation
 ### Mise en place de la VM et des outils nécessaires
 ```bash
 sudo apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
@@ -18,7 +17,7 @@ pip install pytest-xdist
 ```
 Une fois les commandes ci-dessus exécutées, il est nécessaire de redémarrer la VM.
 
-### Mise en place de von-network
+### Installation et démarrage de von-network
 1. Clone du projet
 ```bash
 git clone https://github.com/bcgov/von-network.git
@@ -40,7 +39,6 @@ curl -X POST "http://localhost:9000/register" -d '{"seed": "Conf0000000000000000
 ```bash
 aca-py start --label Conf -it http 0.0.0.0 8000 -ot http --admin 0.0.0.0 11000 --admin-insecure-mode --genesis-url http://localhost:9000/genesis --seed Conf0000000000000000000000000001 --endpoint http://localhost:8000/ --debug-connections --auto-provision --wallet-type indy --wallet-name Conf1 --wallet-key secret
 ```
-
 ### Lancer l'agent bob
 ```bash
 aca-py start --label Bob -it http 0.0.0.0 8001 -ot http --admin 0.0.0.0 11001 --admin-insecure-mode --endpoint http://localhost:8001/ --genesis-url http://localhost:9000/genesis --debug-connections --auto-provision --wallet-local-did --wallet-type indy --wallet-name Bob1 --wallet-key secret
@@ -174,6 +172,39 @@ Réponse :
   "invitation_key": "2eCwCHszBALwPfr9TL8GZvLFza2eZxAPwHZ1EyD3FyDP"
 }
 ```
+### Création d'un schéma : 
+Depuis l'agent Confédération, exécutez l'end-point : "/schemas" (POST) :
+Body : 
+```json
+{
+    "attributes": [
+      "nom",
+      "prenom",      
+      "age"
+    ],
+    "schema_name": "identite",
+    "schema_version": "1.0"
+}
+```
+Réponse : 
+```json
+{
+  "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
+  "schema": {
+    "ver": "1.0",
+    "id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
+    "name": "identite",
+    "version": "1.0",
+    "attrNames": [
+      "nom",
+      "age",
+      "prenom"
+    ],
+    "seqNo": 8
+  }
+}
+```
+
 
 
 ## WEB APP
