@@ -72,7 +72,7 @@ cd e-id-app
 npm install
 ng serve --open
 ```
-
+5. Application accessible à l'adresse : http://localhost:4200/
 
 
 ## Development server
