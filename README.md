@@ -126,6 +126,55 @@ Réponse :
   "invitation_msg_id": "a40bb544-46b8-4aa0-bfe3-048e306b690b"
 }
 ```
+3. Bob accepte l'invitation :
+- Exécuter l'end-point suivant : /didexchange/{conn_id}/accept-invitation 
+- conn_id : Visible dans la réponse précédente (connection_id)
+
+Réponse : 
+```json
+{
+  "invitation_key": "2eCwCHszBALwPfr9TL8GZvLFza2eZxAPwHZ1EyD3FyDP",
+  "their_role": "inviter",
+  "their_label": "Conf",
+  "my_did": "GULVoka7w2c9B6R2NdUDPP",
+  "connection_protocol": "didexchange/1.0",
+  "created_at": "2021-12-24T14:35:58.120459Z",
+  "rfc23_state": "request-sent",
+  "accept": "manual",
+  "connection_id": "ed6e2de7-9f57-44ca-a921-56b80c16bdad",
+  "routing_state": "none",
+  "invitation_mode": "once",
+  "state": "request",
+  "updated_at": "2021-12-24T14:45:51.592911Z",
+  "request_id": "6acc739a-b8d2-450d-9abc-d0e65489e07b",
+  "invitation_msg_id": "a40bb544-46b8-4aa0-bfe3-048e306b690b"
+}
+```
+4. Confédération accepte la demande de connexion : 
+- Exécuter l'end-point suivant : /didexchange/{conn_id}/accept-request
+- conn_id : Peut être récupéré en faisant un /connections (GET) ! connexion_id différent de bob !
+Réponse : 
+```json
+{
+  "updated_at": "2021-12-24T14:50:42.752988Z",
+  "their_label": "Bob",
+  "my_did": "VxkdcMLQv93HcGy8DhcAY7",
+  "invitation_msg_id": "a40bb544-46b8-4aa0-bfe3-048e306b690b",
+  "their_role": "invitee",
+  "routing_state": "none",
+  "invitation_mode": "once",
+  "accept": "manual",
+  "state": "response",
+  "connection_protocol": "didexchange/1.0",
+  "rfc23_state": "response-sent",
+  "their_did": "GULVoka7w2c9B6R2NdUDPP",
+  "request_id": "6acc739a-b8d2-450d-9abc-d0e65489e07b",
+  "connection_id": "5b3f84bd-9e9b-4301-806e-8cfb659fca22",
+  "created_at": "2021-12-24T14:28:40.076557Z",
+  "invitation_key": "2eCwCHszBALwPfr9TL8GZvLFza2eZxAPwHZ1EyD3FyDP"
+}
+```
+
 
 ## WEB APP
 ### Get started
