@@ -55,6 +55,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ```bash
 sudo apt-get install git-all
 sudo apt install npm
+sudo apt install nodejs
 sudo npm install -g @angular/cli
 ```
 1. Clone du projet :
