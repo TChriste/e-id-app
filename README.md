@@ -179,7 +179,7 @@ Body :
 {
     "attributes": [
       "nom",
-      "prenom",      
+      "prenom",
       "age"
     ],
     "schema_name": "identite",
@@ -189,21 +189,162 @@ Body :
 Réponse : 
 ```json
 {
-  "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
+  "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:eID:1.0",
   "schema": {
     "ver": "1.0",
-    "id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
-    "name": "identite",
+    "id": "V1i1ptWQmQQCMrHQDz2PEe:2:eID:1.0",
+    "name": "eID",
     "version": "1.0",
     "attrNames": [
-      "nom",
       "age",
-      "prenom"
+      "prenom",
+      "nom"
     ],
     "seqNo": 8
   }
 }
 ```
+### Création de l'endentité :
+1. Bob envoie une proposition : `(POST) issue-credential-2.0/send-proposal`
+Body : 
+```json
+{
+  "auto_remove": true,
+  "comment": "string",
+  "connection_id": "5842822f-15eb-4e6b-96c7-a4ec72822f01",
+  "credential_preview": {
+    "@type": "issue-credential/2.0/credential-preview",
+    "attributes": [
+      {
+        "mime-type": "plain/text",
+        "name": "age", 
+        "value": "20"
+      },
+      {
+        "mime-type": "plain/text",
+        "name": "nom", 
+        "value": "Schmidt"
+      },
+      {
+        "mime-type": "plain/text",
+        "name": "prenom", 
+        "value": "Bob"
+      }
+    ]
+  },
+  "filter": {
+    "indy": {
+      "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:9:default",
+      "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:eID:1.0",
+      "schema_name": "identite",
+      "schema_version": "1.0"
+    }
+  },
+  "trace": true
+}
+```
+A adapter : 
+- connexion_id
+- schema_id
+- cred_def_id (adapter avec le schema_id)
+Réponse : 
+```json
+{
+  "state": "proposal-sent",
+  "cred_proposal": {
+    "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/issue-credential/2.0/propose-credential",
+    "@id": "247af232-f0c0-4893-95cb-c6363c19c72c",
+    "~trace": {
+      "target": "log",
+      "full_thread": true,
+      "trace_reports": []
+    },
+    "filters~attach": [
+      {
+        "@id": "indy",
+        "mime-type": "application/json",
+        "data": {
+          "base64": "eyJjcmVkX2RlZl9pZCI6ICJWMWkxcHRXUW1RUUNNckhRRHoyUEVlOjM6Q0w6OTpkZWZhdWx0IiwgInNjaGVtYV9pZCI6ICJWMWkxcHRXUW1RUUNNckhRRHoyUEVlOjI6ZUlEOjEuMCIsICJzY2hlbWFfbmFtZSI6ICJpZGVudGl0ZSIsICJzY2hlbWFfdmVyc2lvbiI6ICIxLjAifQ=="
+        }
+      }
+    ],
+    "formats": [
+      {
+        "attach_id": "indy",
+        "format": "hlindy/cred-filter@v2.0"
+      }
+    ],
+    "comment": "string",
+    "credential_preview": {
+      "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/issue-credential/2.0/credential-preview",
+      "attributes": [
+        {
+          "name": "age",
+          "mime-type": "plain/text",
+          "value": "20"
+        },
+        {
+          "name": "nom",
+          "mime-type": "plain/text",
+          "value": "Schmidt"
+        },
+        {
+          "name": "prenom",
+          "mime-type": "plain/text",
+          "value": "Bob"
+        }
+      ]
+    }
+  },
+  "auto_offer": false,
+  "thread_id": "247af232-f0c0-4893-95cb-c6363c19c72c",
+  "cred_preview": {
+    "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/issue-credential/2.0/credential-preview",
+    "attributes": [
+      {
+        "name": "age",
+        "mime-type": "plain/text",
+        "value": "20"
+      },
+      {
+        "name": "nom",
+        "mime-type": "plain/text",
+        "value": "Schmidt"
+      },
+      {
+        "name": "prenom",
+        "mime-type": "plain/text",
+        "value": "Bob"
+      }
+    ]
+  },
+  "trace": true,
+  "cred_ex_id": "03d93b22-fa3f-48a4-bf57-735898065f3e",
+  "updated_at": "2021-12-25T14:37:48.403308Z",
+  "by_format": {
+    "cred_proposal": {
+      "indy": {
+        "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:9:default",
+        "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:eID:1.0",
+        "schema_name": "identite",
+        "schema_version": "1.0"
+      }
+    }
+  },
+  "auto_remove": true,
+  "auto_issue": false,
+  "initiator": "self",
+  "connection_id": "5842822f-15eb-4e6b-96c7-a4ec72822f01",
+  "role": "holder",
+  "created_at": "2021-12-25T14:37:48.403308Z"
+}
+```
+2. fdsfs
+
+cccfe0ed-2ed6-4a5d-9709-97ef624b090e
+
+
+
 
 
 
