@@ -189,16 +189,16 @@ Body :
 Réponse : 
 ```json
 {
-  "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:eID:1.0",
+  "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
   "schema": {
     "ver": "1.0",
-    "id": "V1i1ptWQmQQCMrHQDz2PEe:2:eID:1.0",
-    "name": "eID",
+    "id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
+    "name": "identite",
     "version": "1.0",
     "attrNames": [
-      "age",
+      "nom",
       "prenom",
-      "nom"
+      "age"
     ],
     "seqNo": 8
   }
