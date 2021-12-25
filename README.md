@@ -251,31 +251,14 @@ A adapter :
 Réponse : 
 ```json
 {
-  "state": "proposal-sent",
   "cred_proposal": {
     "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/issue-credential/2.0/propose-credential",
-    "@id": "247af232-f0c0-4893-95cb-c6363c19c72c",
+    "@id": "8822cb39-37a5-4704-b488-1797d9a985f2",
     "~trace": {
       "target": "log",
       "full_thread": true,
       "trace_reports": []
     },
-    "filters~attach": [
-      {
-        "@id": "indy",
-        "mime-type": "application/json",
-        "data": {
-          "base64": "eyJjcmVkX2RlZl9pZCI6ICJWMWkxcHRXUW1RUUNNckhRRHoyUEVlOjM6Q0w6OTpkZWZhdWx0IiwgInNjaGVtYV9pZCI6ICJWMWkxcHRXUW1RUUNNckhRRHoyUEVlOjI6ZUlEOjEuMCIsICJzY2hlbWFfbmFtZSI6ICJpZGVudGl0ZSIsICJzY2hlbWFfdmVyc2lvbiI6ICIxLjAifQ=="
-        }
-      }
-    ],
-    "formats": [
-      {
-        "attach_id": "indy",
-        "format": "hlindy/cred-filter@v2.0"
-      }
-    ],
-    "comment": "string",
     "credential_preview": {
       "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/issue-credential/2.0/credential-preview",
       "attributes": [
@@ -295,10 +278,45 @@ Réponse :
           "value": "Bob"
         }
       ]
+    },
+    "comment": "string",
+    "filters~attach": [
+      {
+        "@id": "indy",
+        "mime-type": "application/json",
+        "data": {
+          "base64": "eyJjcmVkX2RlZl9pZCI6ICJWMWkxcHRXUW1RUUNNckhRRHoyUEVlOjM6Q0w6OTpkZWZhdWx0IiwgInNjaGVtYV9pZCI6ICJWMWkxcHRXUW1RUUNNckhRRHoyUEVlOjI6aWRlbnRpdGU6MS4wIiwgInNjaGVtYV9uYW1lIjogImlkZW50aXRlIiwgInNjaGVtYV92ZXJzaW9uIjogIjEuMCJ9"
+        }
+      }
+    ],
+    "formats": [
+      {
+        "attach_id": "indy",
+        "format": "hlindy/cred-filter@v2.0"
+      }
+    ]
+  },
+  "initiator": "self",
+  "thread_id": "8822cb39-37a5-4704-b488-1797d9a985f2",
+  "auto_offer": false,
+  "state": "proposal-sent",
+  "connection_id": "d7b3207b-3d08-4731-a609-ebe907ba4358",
+  "cred_ex_id": "d57749d8-26fc-452f-8fe2-a75681606f3e",
+  "by_format": {
+    "cred_proposal": {
+      "indy": {
+        "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:9:default",
+        "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
+        "schema_name": "identite",
+        "schema_version": "1.0"
+      }
     }
   },
-  "auto_offer": false,
-  "thread_id": "247af232-f0c0-4893-95cb-c6363c19c72c",
+  "trace": true,
+  "auto_remove": true,
+  "created_at": "2021-12-25T15:53:11.509586Z",
+  "updated_at": "2021-12-25T15:53:11.509586Z",
+  "role": "holder",
   "cred_preview": {
     "@type": "did:sov:BzCbsNYhMrjHiqZDTUASHg;spec/issue-credential/2.0/credential-preview",
     "attributes": [
@@ -319,25 +337,7 @@ Réponse :
       }
     ]
   },
-  "trace": true,
-  "cred_ex_id": "03d93b22-fa3f-48a4-bf57-735898065f3e",
-  "updated_at": "2021-12-25T14:37:48.403308Z",
-  "by_format": {
-    "cred_proposal": {
-      "indy": {
-        "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:9:default",
-        "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:eID:1.0",
-        "schema_name": "identite",
-        "schema_version": "1.0"
-      }
-    }
-  },
-  "auto_remove": true,
-  "auto_issue": false,
-  "initiator": "self",
-  "connection_id": "5842822f-15eb-4e6b-96c7-a4ec72822f01",
-  "role": "holder",
-  "created_at": "2021-12-25T14:37:48.403308Z"
+  "auto_issue": false
 }
 ```
 2. fdsfs
