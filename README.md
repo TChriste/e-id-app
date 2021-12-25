@@ -211,7 +211,7 @@ Body :
 {
   "auto_remove": true,
   "comment": "string",
-  "connection_id": "5842822f-15eb-4e6b-96c7-a4ec72822f01",
+  "connection_id": "cb98dd1a-ae8d-43f2-b3b7-95f10cf8109f",
   "credential_preview": {
     "@type": "issue-credential/2.0/credential-preview",
     "attributes": [
@@ -235,7 +235,7 @@ Body :
   "filter": {
     "indy": {
       "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:9:default",
-      "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:eID:1.0",
+      "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
       "schema_name": "identite",
       "schema_version": "1.0"
     }
