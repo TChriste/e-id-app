@@ -214,14 +214,14 @@ Créer une credential-definition : `/credential-definitions (POST)`
 Body : 
 ```json
 {
-    "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
+    "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.1",
     "tag": "default"
   }
 ```
 Réponse : 
 ```json
 {
-  "credential_definition_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:8:default"
+  "credential_definition_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:11:default"
 }
 ```
 
