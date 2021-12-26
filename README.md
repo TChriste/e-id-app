@@ -203,6 +203,20 @@ Réponse :
     "seqNo": 8
   }
 }
+Créer une credential-definition : `/credential-definitions (POST)`
+Body : 
+```json
+{
+    "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
+    "tag": "default"
+  }
+```
+Réponse : 
+```json
+{
+  "credential_definition_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:8:default"
+}
+```
 
 ```
 ### Création de l'endentité :
@@ -235,6 +249,7 @@ Body :
   },
   "filter": {
     "indy": {
+      "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:8:default",
       "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
       "schema_name": "identite",
       "schema_version": "1.0"
