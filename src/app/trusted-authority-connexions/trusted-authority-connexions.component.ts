@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import ConnectionInterface from "../interfaces/ConnectionInterface";
-import {TrustedAuthorityService} from "../services/trusted-authority.service";
+import {ConfederationService} from "../services/trusted-authority.service";
 
 @Component({
   selector: 'app-trusted-authority-connexions',
@@ -13,7 +13,7 @@ export class TrustedAuthorityConnexionsComponent implements OnInit {
   connections: ConnectionInterface[] = [];
 
   constructor(
-    private _trustedAuthorityService: TrustedAuthorityService
+    private _trustedAuthorityService: ConfederationService
   ) { }
 
   ngOnInit(): void {

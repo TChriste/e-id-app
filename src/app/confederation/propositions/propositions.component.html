@@ -3,6 +3,12 @@
     <mat-card-content>
         <div class="row">
             <mat-form-field class="mat-form-field">
+            <mat-label>Cred_ex_id</mat-label>
+            <input disabled matInput [value]="proposition?.cred_ex_record?.cred_ex_id "/>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="mat-form-field">
             <mat-label>Nom</mat-label>
             <input disabled matInput/>
             </mat-form-field>
@@ -22,7 +28,7 @@
     </mat-card-content>
     <mat-card-actions align="end">
         <button mat-stroked-button color="warn">Supprimer</button>
-        <button mat-raised-button color="primary">Créer une offre</button>
+        <button mat-raised-button color="primary" (click)="valider(proposition?.cred_ex_record?.cred_ex_id)">Créer une offre</button>
       </mat-card-actions>
   </mat-card>
   

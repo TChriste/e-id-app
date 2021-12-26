@@ -1,7 +1,7 @@
 <h1>Connexions</h1>
 <div class="info">
   <mat-icon aria-hidden="false">info</mat-icon>
-   Liste des connexions établies, veuillez vérifier les informations et valider la création de l'e-id
+   Liste des connexions établies
 </div>
 <mat-card class="connection-card" *ngFor="let connection of connections; let i = index">
   <mat-card-content>
@@ -9,8 +9,8 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="mat-form-field">
-            <mat-label>Date de création</mat-label>
-            <input disabled matInput [value]="connection.created_at"/>
+            <mat-label>Libellé</mat-label>
+            <input disabled matInput [value]="connection.their_label"/>
           </mat-form-field>
         </div>
         <div class="col">
@@ -26,49 +26,6 @@
           <input disabled matInput [value]="connection.connection_id"/>
         </mat-form-field>
       </div>
-      <div class="row">
-        <mat-form-field class="mat-form-field">
-          <mat-label>Credential Definition ID</mat-label>
-          <input disabled matInput value="???"/>
-        </mat-form-field>
-      </div>
-      <mat-accordion>
-        <mat-expansion-panel [expanded]="panelOpenState">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Informations personnelles
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <div class="row">
-            <div class="col">
-              <mat-form-field class="mat-form-field">
-                <mat-label>Nom</mat-label>
-                <input disabled matInput value="Smith"/>
-              </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="mat-form-field">
-                <mat-label>Prénom</mat-label>
-                <input disabled matInput value="Alice"/>
-              </mat-form-field>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <mat-form-field class="mat-form-field">
-                <mat-label>Genre</mat-label>
-                <input disabled matInput value="Féminin"/>
-              </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="mat-form-field">
-                <mat-label>Date de naissance</mat-label>
-                <input disabled matInput value="05.03.1996"/>
-              </mat-form-field>
-            </div>
-          </div>
-        </mat-expansion-panel>
-      </mat-accordion>
     </form>
   </mat-card-content>
 </mat-card>
