@@ -25,6 +25,7 @@ import { PropositionsComponent } from './confederation/propositions/propositions
 import { ConfirmationUtilisateurComponent } from './user/confirmation-utilisateur/confirmation-utilisateur.component';
 import { ConfirmationsComponent } from './confederation/confirmations/confirmations.component';
 import { SauvegardeComponent } from './user/sauvegarde/sauvegarde.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { SauvegardeComponent } from './user/sauvegarde/sauvegarde.component';
     MatExpansionModule,
     HttpClientModule,
     ReactiveFormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

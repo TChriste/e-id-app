@@ -12,22 +12,48 @@
             </mat-form-field>
         </div>
         <div class="row">
-            <mat-form-field class="mat-form-field">
-            <mat-label>Nom</mat-label>
-            <input disabled matInput [value]="getAttributeValue(identifiant, 'nom')"/>
-            </mat-form-field>
+            <div class="col left">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Nom</mat-label>
+                    <input disabled matInput [value]="getAttributeValue(identifiant, 'nom')"/>
+                </mat-form-field>
+            </div>
+            <div class="col right">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Prénom</mat-label>
+                    <input disabled matInput [value]="getAttributeValue(identifiant, 'prenom')"/>
+                </mat-form-field>
+            </div>
         </div>
         <div class="row">
-            <mat-form-field class="mat-form-field">
-            <mat-label>Prénom</mat-label>
-            <input disabled matInput [value]="getAttributeValue(identifiant, 'prenom')"/>
-            </mat-form-field>
+            <div class="col left">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Genre</mat-label>
+                    <input disabled matInput [value]="getAttributeValue(identifiant, 'genre')"/>
+                </mat-form-field>
+            </div>
+            <div class="col right">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Age</mat-label>
+                    <input disabled matInput [value]="getAttributeValue(identifiant, 'age')"/>
+                </mat-form-field>
+            </div>
         </div>
         <div class="row">
-            <mat-form-field class="mat-form-field">
-            <mat-label>Age</mat-label>
-            <input disabled matInput [value]="getAttributeValue(identifiant, 'age')"/>
-            </mat-form-field>
+            <div class="col">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Taille</mat-label>
+                    <input disabled matInput [value]="getAttributeValue(identifiant, 'taille')"/>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Taille</mat-label>
+                    <input disabled matInput [value]="getAttributeValue(identifiant, 'origine')"/>
+                </mat-form-field>
+            </div>
         </div>
     </mat-card-content>
     <mat-card-actions align="end">

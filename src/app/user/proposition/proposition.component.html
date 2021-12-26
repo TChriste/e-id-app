@@ -1,32 +1,64 @@
-<div [formGroup]="form">
-    <div class="row">
-        <div class="col right">
-            <h2>Demande de création d'un e-id</h2>
-            <p>Explication ...</p>
-        </div>
-    </div>
-    <div class="row">
-        <mat-form-field class="mat-form-field">
-            <mat-label>Nom</mat-label>
-            <input matInput formControlName="nom"/>
-        </mat-form-field>
-    </div>
-    <div class="row">
-    <mat-form-field class="mat-form-field">
-        <mat-label>Prénom</mat-label>
-        <input matInput formControlName="prenom"/>
-    </mat-form-field>
-    </div>
-    <div class="row">
-        <mat-form-field class="mat-form-field">
-            <mat-label>Age</mat-label>
-            <input matInput formControlName="age"/>
-        </mat-form-field>
-    </div>
-    <div class="row">    
-        <button mat-button mat-raised-button color="primary" (click)="valider()" [disabled]="form.invalid">
-            Valider
-        </button>
-    </div>
+<h1>1. Demande de création d'un e-id</h1>
+<div class="info">
+    <mat-icon aria-hidden="false">info</mat-icon>
+     La première étape consiste à effectuer une demande de création de l'e-id. Pour ce faire, remplissez le formulaire ci-dessous. Une fois le formulaire validé, vos informations seront vérifiées par la confédération.
 </div>
+<mat-card class="card" [formGroup]="form">
+    <mat-card-content>
+        <div class="row">
+            <div class="col left">
+              <mat-form-field class="mat-form-field">
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="nom"/>
+              </mat-form-field>
+            </div>
+            <div class="col right">
+              <mat-form-field class="mat-form-field">
+                <mat-label>Prénom</mat-label>
+                <input matInput formControlName="prenom">
+              </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col left">
+                <mat-form-field appearance="fill">
+                    <mat-label>Genre</mat-label>
+                    <mat-select formControlName="genre">
+                      <mat-option value="Féminin">Féminin</mat-option>
+                      <mat-option value="Masculin">Masculin</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Age</mat-label>
+                    <input matInput formControlName="age">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Taille</mat-label>
+                    <input matInput formControlName="taille">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Origine</mat-label>
+                    <input matInput formControlName="origine">
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <div class="row">    
+            <button mat-button mat-raised-button color="primary" (click)="valider()" [disabled]="form.invalid">
+                Valider
+            </button>
+        </div>
+    </mat-card-actions>
+</mat-card>
   

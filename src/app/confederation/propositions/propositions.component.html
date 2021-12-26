@@ -1,4 +1,8 @@
 <h1>Liste des propositions</h1>
+<div class="info">
+    <mat-icon aria-hidden="false">info</mat-icon>
+     Ci-dessous, les demandes de création d'e-id, veuillez les vérifier. Si la demande est valide, vous pouvez créer une offre.  
+</div>
 <mat-card class="card" *ngFor="let proposition of propositions; let i = index">
     <mat-card-content>
         <div class="row">
@@ -8,22 +12,48 @@
             </mat-form-field>
         </div>
         <div class="row">
-            <mat-form-field class="mat-form-field">
-            <mat-label>Nom</mat-label>
-            <input disabled matInput [value]="getAttributeValue(proposition, 'nom')"/>
-            </mat-form-field>
+            <div class="col left">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Nom</mat-label>
+                    <input disabled matInput [value]="getAttributeValue(proposition, 'nom')"/>
+                </mat-form-field>
+            </div>
+            <div class="col right">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Prénom</mat-label>
+                    <input disabled matInput [value]="getAttributeValue(proposition, 'prenom')"/>
+                </mat-form-field>
+            </div>
         </div>
         <div class="row">
-            <mat-form-field class="mat-form-field">
-            <mat-label>Prénom</mat-label>
-            <input disabled matInput [value]="getAttributeValue(proposition, 'prenom')"/>
-            </mat-form-field>
+            <div class="col left">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Genre</mat-label>
+                    <input disabled matInput [value]="getAttributeValue(proposition, 'genre')"/>
+                </mat-form-field>
+            </div>
+            <div class="col right">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Age</mat-label>
+                    <input disabled matInput [value]="getAttributeValue(proposition, 'age')"/>
+                </mat-form-field>
+            </div>
         </div>
         <div class="row">
-            <mat-form-field class="mat-form-field">
-            <mat-label>Age</mat-label>
-            <input disabled matInput [value]="getAttributeValue(proposition, 'age')"/>
-            </mat-form-field>
+            <div class="col">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Taille</mat-label>
+                    <input disabled matInput [value]="getAttributeValue(proposition, 'taille')"/>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <mat-form-field class="mat-form-field">
+                    <mat-label>Taille</mat-label>
+                    <input disabled matInput [value]="getAttributeValue(proposition, 'origine')"/>
+                </mat-form-field>
+            </div>
         </div>
     </mat-card-content>
     <mat-card-actions align="end">

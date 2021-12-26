@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class SauvegardeComponent implements OnInit {
 
   identifiants: any[] = [];
 
-  constructor(private _userService: UserService) { }
+  constructor(private _userService: UserService, private _router: Router) { }
 
   ngOnInit(): void {
     this._userService.getRecords('credential-received').subscribe((records) => {
@@ -21,6 +22,7 @@ export class SauvegardeComponent implements OnInit {
   valider(cred_ex_id: string): void {
     this._userService.storeCredential(cred_ex_id).subscribe((value) => {
       console.log('reponse', value);
+      this._router.navigate(['/user/wallet']);
     });
   }
 

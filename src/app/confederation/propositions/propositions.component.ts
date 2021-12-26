@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ConfederationService } from 'src/app/services/trusted-authority.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class PropositionsComponent implements OnInit {
 
   propositions: any[] = [];
 
-  constructor(private _trustedAuthorityService: ConfederationService) { }
+  constructor(private _trustedAuthorityService: ConfederationService, private _router: Router) { }
 
   ngOnInit(): void {
     this._trustedAuthorityService.getRecords('proposal-received').subscribe((records) => {
@@ -23,6 +24,7 @@ export class PropositionsComponent implements OnInit {
     console.log(cred_ex_id);
     this._trustedAuthorityService.responseToOffer(cred_ex_id).subscribe((value) => {
       console.log('reponse', value);
+      this._router.navigate(['/confederation/confirmations']);
     });
   }
 
