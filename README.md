@@ -203,6 +203,7 @@ Réponse :
     "seqNo": 8
   }
 }
+```
 Créer une credential-definition : `/credential-definitions (POST)`
 Body : 
 ```json
