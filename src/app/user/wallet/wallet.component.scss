@@ -1,5 +1,13 @@
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .card {
     max-width: 400px;
+    margin-right: 5%;
   }
 
   .profil-image {

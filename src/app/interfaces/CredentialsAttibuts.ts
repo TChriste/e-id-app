@@ -1,4 +1,5 @@
 export default interface CredientialsAttributs {
-    name: string;
-    // TODO : A compléter
+    nom: string;
+    prenom: string;
+    age: string;
 }

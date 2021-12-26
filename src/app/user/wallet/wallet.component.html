@@ -1,59 +1,61 @@
-<mat-card class="card" *ngFor="let credential of credientals; let i = index">
-    <mat-card-content>
-        <div class="row">
-            <div class="col left">
-                <div mat-card-avatar class="profil-image"></div>
-            </div>
-            <div class="col right">
-                <h2>{{ credential.attrs.name}}</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-              <mat-form-field class="mat-form-field">
-                <mat-label>Genre</mat-label>
-                <input disabled matInput value="Féminin"/>
-              </mat-form-field>
-            </div>
-            <div class="col">
-              <mat-form-field class="mat-form-field">
-                <mat-label>Date de naissance</mat-label>
-                <input disabled matInput value="05.03.1996"/>
-              </mat-form-field>
-            </div>
-        </div>
-        <div class="row">
-              <mat-form-field class="mat-form-field">
-                <mat-label>Taille (cm)</mat-label>
-                <input disabled matInput value="178"/>
-              </mat-form-field>
-        </div>
-        <div class="row">
-            <mat-form-field class="mat-form-field">
-            <mat-label>Lieu d'origine</mat-label>
-            <input disabled matInput value="Vendlincourt (JU)"/>
-            </mat-form-field>
-        </div>
-        <div class="row">
-            <mat-form-field class="mat-form-field">
-            <mat-label>Autorité</mat-label>
-            <input disabled matInput value="Delémont (JU)"/>
-            </mat-form-field>
-        </div>
-        <div class="row">
-            <div class="col">
+<div class="cards">
+  <mat-card class="card" *ngFor="let credential of credientals; let i = index">
+      <mat-card-content>
+          <div class="row">
+              <div class="col left">
+                  <div mat-card-avatar class="profil-image"></div>
+              </div>
+              <div class="col right">
+                  <h2>{{ credential?.attrs?.nom}} {{ credential?.attrs?.prenom}}</h2>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col">
                 <mat-form-field class="mat-form-field">
-                <mat-label>Délivrée le </mat-label>
-                <input disabled matInput value="14.10.2018"/>
+                  <mat-label>Genre</mat-label>
+                  <input disabled matInput value="Féminin"/>
                 </mat-form-field>
-            </div>
-            <div class="col">
+              </div>
+              <div class="col">
                 <mat-form-field class="mat-form-field">
-                <mat-label>Date d'expiration</mat-label>
-                <input disabled matInput value="13.10.2028"/>
+                  <mat-label>Age</mat-label>
+                  <input disabled matInput [value]="credential?.attrs?.age">
                 </mat-form-field>
-            </div>
-        </div>
-    </mat-card-content>
-  </mat-card>
+              </div>
+          </div>
+          <div class="row">
+                <mat-form-field class="mat-form-field">
+                  <mat-label>Taille (cm)</mat-label>
+                  <input disabled matInput value="178"/>
+                </mat-form-field>
+          </div>
+          <div class="row">
+              <mat-form-field class="mat-form-field">
+              <mat-label>Lieu d'origine</mat-label>
+              <input disabled matInput value="Vendlincourt (JU)"/>
+              </mat-form-field>
+          </div>
+          <div class="row">
+              <mat-form-field class="mat-form-field">
+              <mat-label>Autorité</mat-label>
+              <input disabled matInput value="Delémont (JU)"/>
+              </mat-form-field>
+          </div>
+          <div class="row">
+              <div class="col">
+                  <mat-form-field class="mat-form-field">
+                  <mat-label>Délivrée le </mat-label>
+                  <input disabled matInput value="14.10.2018"/>
+                  </mat-form-field>
+              </div>
+              <div class="col">
+                  <mat-form-field class="mat-form-field">
+                  <mat-label>Date d'expiration</mat-label>
+                  <input disabled matInput value="13.10.2028"/>
+                  </mat-form-field>
+              </div>
+          </div>
+      </mat-card-content>
+    </mat-card>
+</div>
   
