@@ -255,17 +255,17 @@ Body :
       {
         "mime-type": "plain/text",
         "name": "genre", 
-        "value": "20"
+        "value": "Masculin"
       },
       {
         "mime-type": "plain/text",
         "name": "taille", 
-        "value": "20"
+        "value": "178"
       },
       {
         "mime-type": "plain/text",
         "name": "origine", 
-        "value": "20"
+        "value": "Vendlincourt (JU)"
       }
     ]
   },
