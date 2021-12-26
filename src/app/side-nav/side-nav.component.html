@@ -1,6 +1,10 @@
-<mat-toolbar color="primary" class="example-toolbar">
+<mat-toolbar *ngIf="isTrustedAuthorityPage" color="primary" class="example-toolbar">
   <button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
-  <h1 class="example-app-name" [routerLink]='[""]'>E-ID</h1>
+  <h1 class="example-app-name" [routerLink]='[""]'>E-ID - Espace confédération</h1>
+</mat-toolbar>
+<mat-toolbar *ngIf="!isTrustedAuthorityPage" color="warn" class="example-toolbar">
+  <button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+  <h1 class="example-app-name" [routerLink]='[""]'>E-ID - Espace citoyen</h1>
 </mat-toolbar>
 <mat-sidenav-container class="example-container" autosize>
   <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
