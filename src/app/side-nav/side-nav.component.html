@@ -27,6 +27,10 @@
         <span class="full-width" *ngIf="isExpanded || isShowing">Confirmation</span>
         <mat-icon mat-list-icon>contact_mail</mat-icon>
       </mat-list-item>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/user/sauvegarde"]' *ngIf="!isTrustedAuthorityPage">
+        <span class="full-width" *ngIf="isExpanded || isShowing">Sauvegarde</span>
+        <mat-icon mat-list-icon>contact_mail</mat-icon>
+      </mat-list-item>
       <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent" [routerLink]='["/user/wallet"]' *ngIf="!isTrustedAuthorityPage">
         <span class="full-width" *ngIf="isExpanded || isShowing">Wallet</span>
         <mat-icon mat-list-icon>contact_mail</mat-icon>

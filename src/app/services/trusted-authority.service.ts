@@ -19,12 +19,20 @@ export class ConfederationService {
     return this.http.get<ConnectionResultInterface>(this.ROOT_URL + '/connections');
   }
 
-  getRecords() {
-    return this.http.get<any>(this.ROOT_URL + '/issue-credential-2.0/records');
+  getRecords(state: string) {
+    let queryURL: string  = this.ROOT_URL + '/issue-credential-2.0/records'; 
+    if (state){
+      queryURL += '?state=' + state;
+    }
+    return this.http.get<any>(queryURL);
   }
 
   responseToOffer(cred_ex_id: string): Observable<any> {
     return this.http.post(this.ROOT_URL + '/issue-credential-2.0/records/' + cred_ex_id + '/send-offer', {}).pipe(map((value) => {return value}));
+  }
+
+  issueCredential(cred_ex_id: string): Observable<any> {
+    return this.http.post(this.ROOT_URL + '/issue-credential-2.0/records/' + cred_ex_id + '/issue', {}).pipe(map((value) => {return value}));
   }
 
 }

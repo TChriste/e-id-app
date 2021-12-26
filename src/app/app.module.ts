@@ -24,6 +24,7 @@ import { PropositionComponent } from './user/proposition/proposition.component';
 import { PropositionsComponent } from './confederation/propositions/propositions.component';
 import { ConfirmationUtilisateurComponent } from './user/confirmation-utilisateur/confirmation-utilisateur.component';
 import { ConfirmationsComponent } from './confederation/confirmations/confirmations.component';
+import { SauvegardeComponent } from './user/sauvegarde/sauvegarde.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ConfirmationsComponent } from './confederation/confirmations/confirmati
     PropositionsComponent,
     ConfirmationUtilisateurComponent,
     ConfirmationsComponent,
+    SauvegardeComponent,
   ],
   imports: [
     BrowserModule,

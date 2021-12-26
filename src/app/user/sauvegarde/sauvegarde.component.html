@@ -1,34 +1,38 @@
-<h1>Confirmation et demande des informations d'identification</h1>
-<mat-card class="card" *ngFor="let confirmation of confirmations; let i = index">
+<h1>Sauvegarde de l'identifiant</h1>
+<div class="info">
+    <mat-icon aria-hidden="false">info</mat-icon>
+     Le(s) identifiant(s) ci-dessous ont été créés par la confédération. Veuillez les sauvegarder dans votre portefeuille.
+  </div>
+<mat-card class="card" *ngFor="let identifiant of identifiants; let i = index">
     <mat-card-content>
         <div class="row">
             <mat-form-field class="mat-form-field">
             <mat-label>Cred_ex_id</mat-label>
-            <input disabled matInput [value]="confirmation?.cred_ex_record?.cred_ex_id "/>
+            <input disabled matInput [value]="identifiant?.cred_ex_record?.cred_ex_id "/>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field class="mat-form-field">
             <mat-label>Nom</mat-label>
-            <input disabled matInput [value]="getAttributeValue(confirmation, 'nom')"/>
+            <input disabled matInput [value]="getAttributeValue(identifiant, 'nom')"/>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field class="mat-form-field">
             <mat-label>Prénom</mat-label>
-            <input disabled matInput [value]="getAttributeValue(confirmation, 'prenom')"/>
+            <input disabled matInput [value]="getAttributeValue(identifiant, 'prenom')"/>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field class="mat-form-field">
             <mat-label>Age</mat-label>
-            <input disabled matInput [value]="getAttributeValue(confirmation, 'age')"/>
+            <input disabled matInput [value]="getAttributeValue(identifiant, 'age')"/>
             </mat-form-field>
         </div>
     </mat-card-content>
     <mat-card-actions align="end">
         <button mat-stroked-button color="warn">Annuler</button>
-        <button mat-raised-button color="primary" (click)="valider(confirmation?.cred_ex_record?.cred_ex_id)">Confirmer</button>
+        <button mat-raised-button color="primary" (click)="valider(identifiant?.cred_ex_record?.cred_ex_id)">Sauvegarder</button>
       </mat-card-actions>
   </mat-card>
   

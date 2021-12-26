@@ -10,6 +10,7 @@ import { PropositionComponent } from './user/proposition/proposition.component';
 import { PropositionsComponent } from './confederation/propositions/propositions.component';
 import { ConfirmationUtilisateurComponent } from './user/confirmation-utilisateur/confirmation-utilisateur.component';
 import { ConfirmationsComponent } from './confederation/confirmations/confirmations.component';
+import { SauvegardeComponent } from './user/sauvegarde/sauvegarde.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: {trustedAuthority: false} },
@@ -46,6 +47,7 @@ const routes: Routes = [
     children: [
       { path: 'demande', component: PropositionComponent },
       { path: 'confirmation', component: ConfirmationUtilisateurComponent },
+      { path: 'sauvegarde', component: SauvegardeComponent },
       { path: 'wallet', component: WalletComponent },
     ]
   },

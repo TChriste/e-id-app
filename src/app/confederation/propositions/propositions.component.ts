@@ -13,10 +13,9 @@ export class PropositionsComponent implements OnInit {
   constructor(private _trustedAuthorityService: ConfederationService) { }
 
   ngOnInit(): void {
-    this._trustedAuthorityService.getRecords().subscribe((records) => {
-      // TODO : Filtrer sur "state": "proposal-received" pour éviter de tous les avoirs (même les déjà validés)
+    this._trustedAuthorityService.getRecords('proposal-received').subscribe((records) => {
       this.propositions = records.results;
-      console.log('proposition', this.propositions);
+      console.log('propositions', this.propositions);
     })
   }
 
