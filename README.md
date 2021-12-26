@@ -218,11 +218,6 @@ Body :
     "attributes": [
       {
         "mime-type": "plain/text",
-        "name": "age", 
-        "value": "20"
-      },
-      {
-        "mime-type": "plain/text",
         "name": "nom", 
         "value": "Schmidt"
       },
@@ -230,12 +225,16 @@ Body :
         "mime-type": "plain/text",
         "name": "prenom", 
         "value": "Bob"
+      },
+      {
+        "mime-type": "plain/text",
+        "name": "age", 
+        "value": "20"
       }
     ]
   },
   "filter": {
     "indy": {
-      "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:9:default",
       "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
       "schema_name": "identite",
       "schema_version": "1.0"
