@@ -27,4 +27,8 @@ export class PropositionsComponent implements OnInit {
     });
   }
 
+  getAttributeValue(proposition: any, attributeName: string): string{
+    const attributes: any[] = proposition?.cred_ex_record?.cred_preview?.attributes
+    return attributes.filter(a => a.name === attributeName)[0].value;
+  }
 }

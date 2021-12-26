@@ -10,19 +10,19 @@
         <div class="row">
             <mat-form-field class="mat-form-field">
             <mat-label>Nom</mat-label>
-            <input disabled matInput/>
+            <input disabled matInput [value]="getAttributeValue(proposition, 'nom')"/>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field class="mat-form-field">
             <mat-label>Prénom</mat-label>
-            <input disabled matInput/>
+            <input disabled matInput [value]="getAttributeValue(proposition, 'prenom')"/>
             </mat-form-field>
         </div>
         <div class="row">
             <mat-form-field class="mat-form-field">
             <mat-label>Age</mat-label>
-            <input disabled matInput/>
+            <input disabled matInput [value]="getAttributeValue(proposition, 'age')"/>
             </mat-form-field>
         </div>
     </mat-card-content>

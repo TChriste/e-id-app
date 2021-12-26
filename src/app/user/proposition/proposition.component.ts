@@ -20,7 +20,12 @@ export class PropositionComponent implements OnInit, OnDestroy {
   });
 
   private readonly _unsubscribe$: Subject<void> = new Subject();
+
   private SCHEMA_ID: string = "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0";
+  private SCHEMA_CRED_DEF_ID: string = "V1i1ptWQmQQCMrHQDz2PEe:3:CL:8:default";
+  private SCHEMA_NAME: string = "identite";
+  private SCHEMA_VERSION: string = "1.0";
+
   
   constructor(private _userService: UserService) { }
 
@@ -66,10 +71,10 @@ export class PropositionComponent implements OnInit, OnDestroy {
           },
           "filter": {
             "indy": {
-              "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:9:default",
+              "cred_def_id": this.SCHEMA_CRED_DEF_ID,
               "schema_id": this.SCHEMA_ID,
-              "schema_name": "identite",
-              "schema_version": "1.0"
+              "schema_name": this.SCHEMA_NAME,
+              "schema_version": this.SCHEMA_VERSION
             }
           },
           "trace": true
