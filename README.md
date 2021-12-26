@@ -180,27 +180,33 @@ Body :
     "attributes": [
       "nom",
       "prenom",
-      "age"
+      "age",
+      "genre",
+      "taille",
+      "origine"
     ],
     "schema_name": "identite",
-    "schema_version": "1.0"
+    "schema_version": "1.1"
 }
 ```
 Réponse : 
 ```json
 {
-  "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
+  "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.1",
   "schema": {
     "ver": "1.0",
-    "id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
+    "id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.1",
     "name": "identite",
-    "version": "1.0",
+    "version": "1.1",
     "attrNames": [
       "nom",
       "prenom",
-      "age"
+      "taille",
+      "origine",
+      "age",
+      "genre"
     ],
-    "seqNo": 8
+    "seqNo": 11
   }
 }
 ```
@@ -244,6 +250,21 @@ Body :
       {
         "mime-type": "plain/text",
         "name": "age", 
+        "value": "20"
+      },
+      {
+        "mime-type": "plain/text",
+        "name": "genre", 
+        "value": "20"
+      },
+      {
+        "mime-type": "plain/text",
+        "name": "taille", 
+        "value": "20"
+      },
+      {
+        "mime-type": "plain/text",
+        "name": "origine", 
         "value": "20"
       }
     ]
