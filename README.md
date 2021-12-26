@@ -219,7 +219,7 @@ Réponse :
 }
 ```
 
-```
+
 ### Création de l'endentité :
 1. Bob envoie une proposition : `(POST) issue-credential-2.0/send-proposal`
 Body : 
