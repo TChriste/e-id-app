@@ -1,9 +1,16 @@
+<h1>Identité(s)</h1>
+<div class="info">
+    <mat-icon aria-hidden="false">info</mat-icon>
+     Liste des identités numériques créées.
+</div>
 <div class="cards">
   <mat-card class="card" *ngFor="let credential of credientals; let i = index">
       <mat-card-content>
           <div class="row">
               <div class="col left">
-                  <div mat-card-avatar class="profil-image"></div>
+                  <div mat-card-avatar class="profil-image">
+                    <img [src]="getAvatar()"/>
+                  </div>
               </div>
               <div class="col right">
                   <h2>{{ credential?.attrs?.nom}} {{ credential?.attrs?.prenom}}</h2>
