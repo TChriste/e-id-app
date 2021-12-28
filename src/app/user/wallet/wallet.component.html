@@ -20,7 +20,7 @@
               <div class="col">
                 <mat-form-field class="mat-form-field">
                   <mat-label>Genre</mat-label>
-                  <input disabled matInput value="Féminin"/>
+                  <input disabled matInput [value]="credential?.attrs?.genre"/>
                 </mat-form-field>
               </div>
               <div class="col">
@@ -33,34 +33,14 @@
           <div class="row">
                 <mat-form-field class="mat-form-field">
                   <mat-label>Taille (cm)</mat-label>
-                  <input disabled matInput value="178"/>
+                  <input disabled matInput [value]="credential?.attrs?.taille"/>
                 </mat-form-field>
           </div>
           <div class="row">
               <mat-form-field class="mat-form-field">
               <mat-label>Lieu d'origine</mat-label>
-              <input disabled matInput value="Vendlincourt (JU)"/>
+              <input disabled matInput [value]="credential?.attrs?.origine"/>
               </mat-form-field>
-          </div>
-          <div class="row">
-              <mat-form-field class="mat-form-field">
-              <mat-label>Autorité</mat-label>
-              <input disabled matInput value="Delémont (JU)"/>
-              </mat-form-field>
-          </div>
-          <div class="row">
-              <div class="col">
-                  <mat-form-field class="mat-form-field">
-                  <mat-label>Délivrée le </mat-label>
-                  <input disabled matInput value="14.10.2018"/>
-                  </mat-form-field>
-              </div>
-              <div class="col">
-                  <mat-form-field class="mat-form-field">
-                  <mat-label>Date d'expiration</mat-label>
-                  <input disabled matInput value="13.10.2028"/>
-                  </mat-form-field>
-              </div>
           </div>
       </mat-card-content>
     </mat-card>
