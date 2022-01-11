@@ -550,11 +550,151 @@ Réponse :
 
 cccfe0ed-2ed6-4a5d-9709-97ef624b090e
 
+## Proof checking
+### Lancer l'agent Bar
+``` 
+aca-py start --label Bar -it http 0.0.0.0 8002 -ot http --admin 0.0.0.0 11002 --admin-insecure-mode --endpoint http://localhost:8002/ --genesis-url http://localhost:9000/genesis --debug-connections --auto-provision --wallet-local-did --wallet-type indy --wallet-name Bar1 --wallet-key secret
+``` 
+De manière similaire à ce qui a été fait entre Conf et Bob, créer une connexion entre Bar et Bob.
 
+### Demande de preuve 
+Le Bar fait une demande de preuve à Bob via l'endpoint /present-proof-2.0/send-request/ (POST) 
+Body: 
+```json 
+{
+  "connection_id": "e124e9c2-87ef-4446-a37d-1b85fe8a798b",
+  "presentation_request": {
+    "indy":{  
+        "name": "Proof of Age",
+        "version": "1.0",
+        "requested_attributes": {
+            "0_nom_uuid": {
+                "name": "nom",
+                "restrictions": [
+                {
+                    "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:11:default"
+                }
+                ]
+            },
+            "0_prenom_uuid": {
+                "name": "prenom",
+                "restrictions": [
+                {
+                    "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:11:default"
+                }
+                ]
+            }
+        },
+        "requested_predicates": {
+        "0_age_GE_uuid": {
+            "name": "age",
+            "p_type": ">=",
+            "p_value": 18,
+            "restrictions": [
+            {
+                "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:11:default"
+            }
+            ]
+        }
+        }
+    }
+  }
+}
+``` 
+Réponse:
+```json
+{
+...
+  "pres_ex_id": "f2008b01-d451-4546-908d-27f3da892815",
+  "state": "request-sent",
+...
+} 
+``` 
+Bob récupère le pres_ex_id (différent de celui de Bar) en exécutant /present-proof-2.0/records/ (GET) 
+Réponse: 
+```json
+{
+...
+  "pres_ex_id": "3ab387db-a738-454f-832d-999114c6875b",
+  "state": "request-received",
+...
+}
+``` 
 
+Bob exécute ensuite /present-proof-2.0/records/3ab387db-a738-454f-832d-999114c6875b/credentials/ (GET) pour lister les identités de son wallet qui correspondent aux critères de la demande de preuve 
+Réponse: 
+```json
+{
+    "cred_info": {
+      "referent": "865320cd-a1f1-4a63-9b8c-fbe5d7695f79",
+      "attrs": {
+        "taille": "175",
+        "genre": "Masculin",
+        "origine": "Lausanne (VD)",
+        "age": "18",
+        "nom": "Durant",
+        "prenom": "Bob"
+      },
+      "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.1",
+      "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:11:default",
+      "rev_reg_id": null,
+      "cred_rev_id": null
+    },
+    "interval": null,
+    "presentation_referents": [
+      "0_age_GE_uuid",
+      "0_prenom_uuid",
+      "0_nom_uuid"
+    ]
+}
+``` 
 
-
-
+Bob envoie ensuite la preuve d'identité demandée en éxécutant /present-proof-2.0/records/3ab387db-a738-454f-832d-999114c6875b/send-presentation (POST) pour prouver qu'il a plus de 18 ans. 
+Body: 
+```json
+{
+  "indy": {
+    "requested_attributes": {
+      "0_nom_uuid": {
+        "cred_id": "865320cd-a1f1-4a63-9b8c-fbe5d7695f79",
+        "revealed": true
+      },
+      "0_prenom_uuid": {
+        "cred_id": "865320cd-a1f1-4a63-9b8c-fbe5d7695f79",
+        "revealed": true
+      }
+    },
+    "requested_predicates": {
+      "0_age_GE_uuid": {
+        "cred_id": "865320cd-a1f1-4a63-9b8c-fbe5d7695f79"
+      }
+    },
+    "self_attested_attributes": {
+    }
+  }
+}
+``` 
+Réponse: 
+```json
+{
+...
+  "pres_ex_id": "3ab387db-a738-454f-832d-999114c6875b",
+  "state": "presentation-sent",
+...
+}
+``` 
+Le Bar contrôle la preuve envoyée par Bob via l'endpoint /present-proof-2.0/records/f2008b01-d451-4546-908d-27f3da892815/verify-presentation:
+Réponse: 
+```json
+{
+...
+  "pres_ex_id": "f2008b01-d451-4546-908d-27f3da892815",
+  "state": "done",
+  "verified": "true",
+...
+}
+ 
+``` 
 ## WEB APP
 ### Get started
 1. Installations (Git, NPM, Angular)
