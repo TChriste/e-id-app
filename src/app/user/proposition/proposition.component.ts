@@ -44,7 +44,7 @@ export class PropositionComponent implements OnInit, OnDestroy {
   valider(): void {
     this._userService.getConnections().subscribe(( connexions )=> {
       if (connexions.results && connexions.results.length >= 1) {
-        const derniereConnexion: ConnectionInterface = connexions.results[connexions.results.length - 1];
+        const derniereConnexion: ConnectionInterface = connexions.results[0];
         const comment = "Proposition pour " + this.form?.value?.prenom;
         
         let proposal: ProposalInterface = {
