@@ -562,7 +562,7 @@ Le Bar fait une demande de preuve à Bob via l'endpoint /present-proof-2.0/send-
 Body: 
 ```json 
 {
-  "connection_id": "6d053e4f-9735-46c4-a6ea-7b8600b20346",
+  "connection_id": "e124e9c2-87ef-4446-a37d-1b85fe8a798b",
   "presentation_request": {
     "indy":{  
         "name": "Proof of Age",
@@ -572,7 +572,7 @@ Body:
                 "name": "nom",
                 "restrictions": [
                 {
-                    "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:9:default"
+                    "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:11:default"
                 }
                 ]
             },
@@ -580,7 +580,7 @@ Body:
                 "name": "prenom",
                 "restrictions": [
                 {
-                    "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:9:default"
+                    "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:11:default"
                 }
                 ]
             }
@@ -592,7 +592,7 @@ Body:
             "p_value": 18,
             "restrictions": [
             {
-                "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:9:default"
+                "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:11:default"
             }
             ]
         }
@@ -626,14 +626,17 @@ Réponse:
 ```json
 {
     "cred_info": {
-      "referent": "1234",
+      "referent": "865320cd-a1f1-4a63-9b8c-fbe5d7695f79",
       "attrs": {
-        "nom": "Schmidt",
-        "age": "20",
+        "taille": "175",
+        "genre": "Masculin",
+        "origine": "Lausanne (VD)",
+        "age": "18",
+        "nom": "Durant",
         "prenom": "Bob"
       },
-      "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.0",
-      "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:9:default",
+      "schema_id": "V1i1ptWQmQQCMrHQDz2PEe:2:identite:1.1",
+      "cred_def_id": "V1i1ptWQmQQCMrHQDz2PEe:3:CL:11:default",
       "rev_reg_id": null,
       "cred_rev_id": null
     },
@@ -653,17 +656,17 @@ Body:
   "indy": {
     "requested_attributes": {
       "0_nom_uuid": {
-        "cred_id": "1234",
+        "cred_id": "865320cd-a1f1-4a63-9b8c-fbe5d7695f79",
         "revealed": true
       },
       "0_prenom_uuid": {
-        "cred_id": "1234",
+        "cred_id": "865320cd-a1f1-4a63-9b8c-fbe5d7695f79",
         "revealed": true
       }
     },
     "requested_predicates": {
       "0_age_GE_uuid": {
-        "cred_id": "1234"
+        "cred_id": "865320cd-a1f1-4a63-9b8c-fbe5d7695f79"
       }
     },
     "self_attested_attributes": {
